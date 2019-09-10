@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import GameContext from '../context/game-context'
 
 const Square = ({ location, sign }) => {

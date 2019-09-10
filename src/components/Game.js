@@ -2,29 +2,12 @@ import React, { useReducer, useState, useEffect } from 'react'
 import Board from './Board'
 import gameReducer from '../reducers/game'
 import GameContext from '../context/game-context'
+import useCheckWinner, { setNewGame } from '../hooks/useCheckWinner'
 
 const Game = () => {
-  const [moves, dispatch] = useReducer(gameReducer, new Array(9).fill(null))
+  const [moves, dispatch] = useReducer(gameReducer, [])
   const [turn, setTurn] = useState("X")
-
-  const checkWinner = () => {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-    for (let line of lines) {
-      const [a,b,c] = line
-      if(moves[a] && moves[a] === moves[b] && moves[a] === moves[c])
-        return moves[a]
-    }
-    return null
-  }
+  useCheckWinner({ moves, dispatch })
 
   useEffect(() => {
     const xox = JSON.parse(localStorage.getItem("xox"))
@@ -35,13 +18,19 @@ const Game = () => {
     }
   }, [])
 
+  const getMoves = () => {
+    return moves.map(({ location, sign }) => {
+      return (
+        <li key={location}>
+          <p>{`${sign} to position [${Math.floor(location/3+1)},${location%3+1}]`}</p>
+        </li>
+      )
+    })
+  }
+
   useEffect(() => {
     localStorage.setItem("xox", JSON.stringify({ moves, turn }))
-    const winner = checkWinner()
-    if(winner) {
-      alert("winner: " + winner)
-    } 
-  })
+  },[moves, turn])
 
   return (
     <GameContext.Provider value={{ moves, dispatch, turn, setTurn }}>
@@ -50,12 +39,13 @@ const Game = () => {
           <Board />
         </div>
         <div className="game-info">
-          <p>Turn: {turn}</p>
-          {/* TODO */}
+          <p>Turn: {turn} <button style={{marginLeft:'20px'}} onClick={() => setNewGame(dispatch)}>New Game</button></p>
+          <ol>{ getMoves() }</ol>
         </div>
       </div>
     </GameContext.Provider>
   )
 }
+
 
 export { Game as default }

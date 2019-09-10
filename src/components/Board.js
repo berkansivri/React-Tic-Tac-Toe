@@ -6,8 +6,9 @@ const Board = () => {
   const { moves } = useContext(GameContext)
 
   const renderSquare = (i) => {
+    const move = moves.find(m => m.location === i)
     return (
-      <Square location={i} sign={moves[i]}/>
+      <Square location={i} sign={move && move.sign}/>
     )
   }
 
