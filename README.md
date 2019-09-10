@@ -1,30 +1,17 @@
 <p align="center">
-  <a href="http://reactjs.org">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png" alt="Logo" width="100" height="100">
+  <a href="https://react-hooks-tic-tac-toe.herokuapp.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png" alt="Logo" width="210" height="150">
   </a>
 
   <h3 align="center">React Tic-Tac-Toe</h3>
 
   <p align="center">
-    Game implementation on React Hooks.
+    XOX Game implementation with React Hooks
     <br />
-    <a target="_blank" href="http://tchat.space/">Live Demo</a>
+    <a target="_blank" href="https://react-hooks-tic-tac-toe.herokuapp.com/"><b>--- Live Server ---</b></a>
   </p>
 </p>
-
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-This project built for improve vue and cloud skills.
-* Routing with Vue-Router and state management on Vuex.
-* Users are stored in <a href="https://firebase.google.com/docs/database/" target="_blank">Firebase Realtime Db</a>. To remember the users kept the information in cookie with <a href="https://github.com/brix/crypto-js" target="_blank">crypted</a> data.
-* Messages are delivered with RabbitMQ (dockerize and runnig on ec2), connection with <a href="https://github.com/eclipse/paho.mqtt.javascript" target="_blank">Paho-MQTT</a> framework.
-* Auto translate with <a href="https://tech.yandex.com/translate/" target="_blank">Yandex Translate API</a> between selected language on user login.
-* <a href="http://tchat.space/" target="_blank">Live demo</a> on AWS S3 bucket. Used vue-cli <a href="https://github.com/multiplegeorges/vue-cli-plugin-s3-deploy" target="_blank">s3 deploy plugin</a> for production.
-
-
-
-
+<hr />
 
 ### `npm start`
 
