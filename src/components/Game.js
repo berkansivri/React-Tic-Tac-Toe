@@ -2,7 +2,8 @@ import React, { useReducer, useState, useEffect } from 'react'
 import Board from './Board'
 import gameReducer from '../reducers/game'
 import GameContext from '../context/game-context'
-import useCheckWinner, { setNewGame } from '../hooks/useCheckWinner'
+import useCheckWinner from '../hooks/useCheckWinner'
+import Moves from './Moves'
 
 const Game = () => {
   const [moves, dispatch] = useReducer(gameReducer, [])
@@ -18,16 +19,6 @@ const Game = () => {
     }
   }, [])
 
-  const getMoves = () => {
-    return moves.map(({ location, sign }) => {
-      return (
-        <li key={location}>
-          <p>{`${sign} to position [${Math.floor(location/3+1)},${location%3+1}]`}</p>
-        </li>
-      )
-    })
-  }
-
   useEffect(() => {
     localStorage.setItem("xox", JSON.stringify({ moves, turn }))
   },[moves, turn])
@@ -39,8 +30,7 @@ const Game = () => {
           <Board />
         </div>
         <div className="game-info">
-          <p>Turn: {turn} <button style={{marginLeft:'20px'}} onClick={() => setNewGame(dispatch)}>New Game</button></p>
-          <ol>{ getMoves() }</ol>
+          <Moves />
         </div>
       </div>
     </GameContext.Provider>

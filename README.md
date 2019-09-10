@@ -1,4 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="http://reactjs.org">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png" alt="Logo" width="100" height="100">
+  </a>
+
+  <h3 align="center">React Tic-Tac-Toe</h3>
+
+  <p align="center">
+    Game implementation on React Hooks.
+    <br />
+    <a target="_blank" href="http://tchat.space/">Live Demo</a>
+  </p>
+</p>
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+This project built for improve vue and cloud skills.
+* Routing with Vue-Router and state management on Vuex.
+* Users are stored in <a href="https://firebase.google.com/docs/database/" target="_blank">Firebase Realtime Db</a>. To remember the users kept the information in cookie with <a href="https://github.com/brix/crypto-js" target="_blank">crypted</a> data.
+* Messages are delivered with RabbitMQ (dockerize and runnig on ec2), connection with <a href="https://github.com/eclipse/paho.mqtt.javascript" target="_blank">Paho-MQTT</a> framework.
+* Auto translate with <a href="https://tech.yandex.com/translate/" target="_blank">Yandex Translate API</a> between selected language on user login.
+* <a href="http://tchat.space/" target="_blank">Live demo</a> on AWS S3 bucket. Used vue-cli <a href="https://github.com/multiplegeorges/vue-cli-plugin-s3-deploy" target="_blank">s3 deploy plugin</a> for production.
+
+
+
 
 
 ### `npm start`
@@ -24,42 +49,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
