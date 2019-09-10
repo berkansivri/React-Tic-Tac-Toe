@@ -1,7 +1,10 @@
 const gameReducer = (state, action) => {
-  switch (action.key) {
+  switch (action.type) {
+    case "POPULATE_MOVES":
+      return action.moves
     case "ADD_MOVE":
-      return [...state, { sign: action.sign, location: action.location }]
+      state[action.location] = action.sign
+      return state
     default:
       return state
   }

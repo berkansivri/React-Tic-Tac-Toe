@@ -1,25 +1,34 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import Square from './Square'
 import GameContext from '../context/game-context'
 
 const Board = () => {
-  const [turn, setTurn] = useState("")
+  const { moves } = useContext(GameContext)
 
-  const squares = (s) => {
+  const renderSquare = (i) => {
     return (
-      <div className="board-row">
-        { [...Array(3).keys()].map((n) => {
-            let key = n+(s*3)
-            return (<Square key={key} location={key} turn={turn} setTurn={setTurn} />)
-          }
-        ) }
-      </div>
+      <Square location={i} sign={moves[i]}/>
     )
   }
+
   return (
-    [...Array(3).keys()].map((s) => (
-      squares(s)
-    ))
+    <div>
+      <div className="board-row">
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
+      </div>
+      <div className="board-row">
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
+      </div>
+      <div className="board-row">
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
+      </div>
+    </div>
   )
 }
 

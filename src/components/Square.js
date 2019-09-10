@@ -1,14 +1,13 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import GameContext from '../context/game-context'
 
-const Square = ({ location, turn, setTurn }) => {
-  const [sign, setSign] = useState("")
-  const { dispatch } = useContext(GameContext)
+const Square = ({ location, sign }) => {
+  const { dispatch, turn, setTurn } = useContext(GameContext)
+
   const handleOnClick = () => {
-    dispatch({ type: "ADD_MOVE", sign, location })
-    console.log(turn);
-    setSign( turn === "X" ? "O" : "X" )
-    setTurn( turn === "X" ? "O" : "X" )
+    if(!!sign) return
+    dispatch({ type: "ADD_MOVE", sign: turn, location })
+    setTurn(turn === "X" ? "O" : "X")
   }
   
   return (
