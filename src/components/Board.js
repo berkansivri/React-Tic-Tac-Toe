@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import Square from './Square'
-import GameContext from '../context/game-context'
+import { useGameContext } from '../context/game-context'
 
 const Board = () => {
-  const { moves, turn } = useContext(GameContext)
+  const { moves, turn } = useGameContext()
 
   const renderSquare = (i) => {
     const move = moves.find(m => m.location === i)

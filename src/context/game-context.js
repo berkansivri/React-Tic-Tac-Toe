@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 const gameContext = React.createContext()
 
-export { gameContext as default }
+const useGameContext = () => useContext(gameContext)
+
+export { gameContext as default, useGameContext }
