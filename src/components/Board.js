@@ -3,7 +3,7 @@ import Square from './Square'
 import GameContext from '../context/game-context'
 
 const Board = () => {
-  const { moves } = useContext(GameContext)
+  const { moves, turn } = useContext(GameContext)
 
   const renderSquare = (i) => {
     const move = moves.find(m => m.location === i)
@@ -29,6 +29,7 @@ const Board = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <p style={{textAlign:"center"}}>Turn: {turn}</p>
     </div>
   )
 }

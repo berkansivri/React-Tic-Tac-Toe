@@ -4,7 +4,7 @@ const useCheckWinner = ({ moves,dispatch }) => {
   useEffect(() => {
     const winner = checkWinner(moves)
     if(winner) {
-      if(window.confirm(`Winner : [${winner}]! New game?`)) {
+      if(window.confirm(`Winner: ~${winner}~! New game?`)) {
         setNewGame(dispatch)
       }
     } else if(moves.length === 9) {
