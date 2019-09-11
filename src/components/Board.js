@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Square from './Square'
 import { useGameContext } from '../context/game-context'
 

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render board component correctly 1`] = `
+<div>
+  <div
+    className="board-row"
+  >
+    <Square
+      location={0}
+      sign="X"
+    />
+    <Square
+      location={1}
+      sign="O"
+    />
+    <Square
+      location={2}
+      sign="X"
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Square
+      location={3}
+      sign="O"
+    />
+    <Square
+      location={4}
+      sign="X"
+    />
+    <Square
+      location={5}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Square
+      location={6}
+    />
+    <Square
+      location={7}
+    />
+    <Square
+      location={8}
+      sign="X"
+    />
+  </div>
+  <p
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Turn: 
+    X
+  </p>
+</div>
+`;

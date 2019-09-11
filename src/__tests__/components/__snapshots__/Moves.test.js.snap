@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Moves component correctly 1`] = `
+<Fragment>
+  <button
+    id="btnNewGame"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": "20px",
+      }
+    }
+  >
+    New Game
+  </button>
+  <ol
+    style={
+      Object {
+        "marginTop": "0px",
+      }
+    }
+  >
+    <li
+      key="0"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        X to position [1,1]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+    <li
+      key="1"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        O to position [1,2]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+    <li
+      key="2"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        X to position [1,3]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+    <li
+      key="3"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        O to position [2,1]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+    <li
+      key="4"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        X to position [2,2]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+    <li
+      key="8"
+      style={
+        Object {
+          "height": "35px",
+        }
+      }
+    >
+      <p
+        style={
+          Object {
+            "display": "inline-block",
+          }
+        }
+      >
+        X to position [3,3]
+      </p>
+       
+      <button
+        id="btnGoMove"
+        onClick={[Function]}
+      >
+        Go
+      </button>
+    </li>
+  </ol>
+</Fragment>
+`;

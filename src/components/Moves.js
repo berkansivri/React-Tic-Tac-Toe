@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import GameContext from '../context/game-context' 
+import React from 'react'
+import { useGameContext } from '../context/game-context' 
 import { setNewGame } from '../hooks/useCheckWinner'
 
 const Moves = () => {
-  const { moves, dispatch, setTurn } = useContext(GameContext)
+  const { moves, dispatch, setTurn } = useGameContext()
   
   const handleGoMove = (step) => {
     dispatch({type: "GO_MOVE", step })
@@ -17,7 +17,7 @@ const Moves = () => {
     return moves.map(({ location, sign }, index) => {
       return (
         <li key={location} style={{height: "35px"}}>
-          <p style={{display: "inline-block"}}>{`${sign} to position [${Math.floor(location/3+1)},${location%3+1}]`}</p>&nbsp;<button onClick={() => handleGoMove(index)}>Go</button>
+          <p style={{display: "inline-block"}}>{`${sign} to position [${Math.floor(location/3+1)},${location%3+1}]`}</p>&nbsp;<button id="btnGoMove" onClick={() => handleGoMove(index)}>Go</button>
         </li>
       )
     })
@@ -25,7 +25,7 @@ const Moves = () => {
 
   return (
     <>
-      <button style={{marginLeft:'20px'}} onClick={handleNewGame}>New Game</button>
+      <button id="btnNewGame" style={{marginLeft:'20px'}} onClick={handleNewGame}>New Game</button>
       <ol style={{marginTop: "0px"}}>{ getMoves() }</ol>
     </>
   )

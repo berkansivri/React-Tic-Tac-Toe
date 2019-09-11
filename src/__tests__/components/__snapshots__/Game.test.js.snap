@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render game component correctly 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dispatch": [Function],
+      "moves": Array [],
+      "setTurn": [Function],
+      "turn": "X",
+    }
+  }
+>
+  <div
+    className="game"
+  >
+    <div
+      className="game-board"
+    >
+      <Board />
+    </div>
+    <div
+      className="game-info"
+    >
+      <Moves />
+    </div>
+  </div>
+</ContextProvider>
+`;
