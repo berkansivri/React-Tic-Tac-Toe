@@ -11,7 +11,7 @@ const Moves = () => {
   }
 
   const handleNewGame = (gameType) => {
-    if (gameType === "multi") {
+    if (gameType === "single") {
       setTurn("X")
     }
     setType(gameType)

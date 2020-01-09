@@ -4,6 +4,7 @@ const useCheckWinner = ({ moves,dispatch }) => {
   useEffect(() => {
     const winner = checkWinner(moves)
     if (winner) {
+      console.log("winner", winner);
       if (winner === "tie") {
         if(window.confirm(`Game draw! New game?`)) {
           setNewGame(dispatch)
