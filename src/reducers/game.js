@@ -4,8 +4,7 @@ const gameReducer = (state, action) => {
       return action.moves
     case "ADD_MOVE":
       const {location, sign} = action
-      const newMove = { location, sign }
-      return [...state, newMove]
+      return [...state, { location, sign }]
     case "GO_MOVE":
       return state.slice(0, action.step + 1)
     case "CLEAR_MOVES":

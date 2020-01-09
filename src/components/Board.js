@@ -29,7 +29,9 @@ const Board = () => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
-      <p style={{textAlign:"center"}}>Turn: {turn}</p>
+      <p style={{ textAlign: "center" }}>
+        Turn: {turn}
+      </p>
     </div>
   )
 }

@@ -8,7 +8,7 @@
   <p align="center">
     XOX Game implementation with React Hooks
     <br />
-    <a target="_blank" href="https://react-hooks-tic-tac-toe.herokuapp.com/"><b>--- Live Server ---</b></a>
+    <a target="_blank" href="https://react-hooks-tic-tac-toe.herokuapp.com/"><b>--- Live ---</b></a>
   </p>
 </p>
 <hr />

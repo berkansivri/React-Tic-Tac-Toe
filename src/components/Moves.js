@@ -16,8 +16,13 @@ const Moves = () => {
   const getMoves = () => {
     return moves.map(({ location, sign }, index) => {
       return (
-        <li key={location} style={{height: "35px"}}>
-          <p style={{display: "inline-block"}}>{`${sign} to position [${Math.floor(location/3+1)},${location%3+1}]`}</p>&nbsp;<button id="btnGoMove" onClick={() => handleGoMove(index)}>Go</button>
+        <li key={location} style={{ height: '35px' }}>
+          <p style={{ display: "inline-block" }}>
+            {`${sign} to position [${Math.floor(location / 3 + 1)},${location % 3 + 1}]`}
+          </p>
+          <button style={{ marginLeft: '5px' }} id="btnGoMove" onClick={() => handleGoMove(index)}>
+            Go
+          </button>
         </li>
       )
     })
@@ -25,8 +30,12 @@ const Moves = () => {
 
   return (
     <>
-      <button id="btnNewGame" style={{marginLeft:'20px'}} onClick={handleNewGame}>New Game</button>
-      <ol style={{marginTop: "0px"}}>{ getMoves() }</ol>
+      <button id="btnNewGame" style={{ marginLeft: '20px' }} onClick={handleNewGame}>
+        New Game
+      </button>
+      <ol style={{ marginTop: '0px' }}>
+        {getMoves()}
+      </ol>
     </>
   )
 }
