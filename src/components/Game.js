@@ -8,24 +8,26 @@ import Moves from './Moves'
 const Game = () => {
   const [moves, dispatch] = useReducer(gameReducer, [])
   const [turn, setTurn] = useState("X")
+  const [type, setType] = useState("single")
   useCheckWinner({ moves, dispatch })
 
   useEffect(() => {
     const xox = JSON.parse(localStorage.getItem("xox"))
     if(xox) {
-      const { moves, turn } = xox
+      const { moves, turn, type } = xox
       dispatch({ type:"POPULATE_MOVES", moves })
+      setType(type)
       setTurn(turn)
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("xox", JSON.stringify({ moves, turn }))
-  },[moves, turn])
+    localStorage.setItem("xox", JSON.stringify({ moves, turn, type }))
+  }, [moves, turn, type])
 
   return (
-    <GameContext.Provider value={{ moves, dispatch, turn, setTurn }}>
-      <div className="game">
+    <GameContext.Provider value={{ moves, dispatch, turn, setTurn, type, setType }}>
+      <div className="container game">
         <div className="game-board">
           <Board />
         </div>
