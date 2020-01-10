@@ -3,18 +3,14 @@ import { useGameContext } from '../context/game-context'
 import { setNewGame } from '../hooks/useCheckWinner'
 
 const Moves = () => {
-  const { moves, dispatch, setTurn, setType } = useGameContext()
+  const { moves, dispatch, setTurn } = useGameContext()
   
   const handleGoMove = (step) => {
     dispatch({type: "GO_MOVE", step })
     setTurn(moves[step].sign === "X" ? "O" : "X")
   }
 
-  const handleNewGame = (gameType) => {
-    if (gameType === "single") {
-      setTurn("X")
-    }
-    setType(gameType)
+  const handleNewGame = () => {
     setNewGame(dispatch)
   }
 
@@ -35,11 +31,8 @@ const Moves = () => {
 
   return (
     <>
-      <button id="btnNewGame" style={{ marginLeft: '20px' }} onClick={() => handleNewGame("single")}>
-        Single Player
-      </button>
-      <button id="btnNewGame" style={{ marginLeft: '15px' }} onClick={() => handleNewGame("multi")}>
-        Multi Player
+      <button id="btnNewGame" style={{ marginLeft: '20px' }} onClick={handleNewGame}>
+        New Game
       </button>
       <ol style={{ marginTop: '0px' }}>
         {getMoves()}

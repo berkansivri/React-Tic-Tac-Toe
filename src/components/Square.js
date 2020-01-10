@@ -7,7 +7,7 @@ const Square = ({ location, sign }) => {
   const handleSignSquare = () => {
     if(!!sign) return
     dispatch({ type: "ADD_MOVE", sign: turn, location })
-    setTurn(turn === "X" ? "O" : "X")
+    setTurn("O")
   }
   
   return (

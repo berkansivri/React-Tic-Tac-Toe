@@ -9,22 +9,20 @@ import { checkWinner } from '../hooks/useCheckWinner'
 const Game = () => {
   const [moves, dispatch] = useReducer(gameReducer, [])
   const [turn, setTurn] = useState("X")
-  const [type, setType] = useState("single")
   useCheckWinner({ moves, dispatch })
 
   useEffect(() => {
     const xox = JSON.parse(localStorage.getItem("xox"))
     if(xox) {
-      const { moves, turn, type } = xox
+      const { moves, turn } = xox
       dispatch({ type:"POPULATE_MOVES", moves })
-      setType(type)
       setTurn(turn)
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("xox", JSON.stringify({ moves, turn, type }))
-  }, [moves, turn, type])
+    localStorage.setItem("xox", JSON.stringify({ moves, turn }))
+  }, [moves, turn])
 
   const scores = {
     X: -10,
@@ -47,10 +45,9 @@ const Game = () => {
         }
       }
     }
+    console.log("addmove dispatch");
     dispatch({ type: "ADD_MOVE", sign: "O", location: playIndex })
     setTurn("X")
-    console.log(bestScore);
-    console.log(playIndex);
   }
 
   const minimax = (movesClone, depth, isMaximizing) => {
@@ -87,15 +84,17 @@ const Game = () => {
   }
 
   useEffect(() => {
-    if (type === "single" && turn === "O") {
-      console.log("effect hook");
-      play([...moves])
+    if (turn === "O") {
+      if (moves.length < 9) 
+        play([...moves])
+      else
+        setTurn("X")
     }
     // eslint-disable-next-line
   }, [turn])
 
   return (
-    <GameContext.Provider value={{ moves, dispatch, turn, setTurn, type, setType }}>
+    <GameContext.Provider value={{ moves, dispatch, turn, setTurn }}>
       <div className="container game">
         <div className="game-board">
           <Board />

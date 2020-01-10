@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 
 const useCheckWinner = ({ moves,dispatch }) => {
   useEffect(() => {
+    console.log("checkwinner effect");
     const winner = checkWinner(moves)
     if (winner) {
-      console.log("winner", winner);
       if (winner === "tie") {
         if(window.confirm(`Game draw! New game?`)) {
           setNewGame(dispatch)
@@ -23,8 +23,6 @@ const setNewGame = (dispatch) => {
 }
 
 const checkWinner = (moves) => {
-  if(moves.length === 9) return "tie"
-  
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -43,7 +41,8 @@ const checkWinner = (moves) => {
     if(arr[a] && arr[a] === arr[b] && arr[a] === arr[c])
       return arr[a]
   }
-  return null
+  if (moves.length === 9) return "tie"
+  else return null
 }
 
 export { setNewGame, checkWinner, useCheckWinner as default }
